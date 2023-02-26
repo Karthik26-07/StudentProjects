@@ -1,0 +1,122 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+    android:gravity="center">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_logo">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_logo"
+            android:outlineSpotShadowColor="@color/colorPrimaryDark">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:text="This is Health UX Kit,"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#026efa">
+
+
+    </androidx.appcompat.widget.AppCompatTextView>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:text="Welcome!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#026efa">
+
+
+    </androidx.appcompat.widget.AppCompatTextView>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="A health Vertical UI kit made with"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#0de062">
+
+
+    </androidx.appcompat.widget.AppCompatTextView> <androidx.appcompat.widget.AppCompatTextView
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:text="love for Adobe XD"
+    android:textSize="15sp"
+    android:textStyle="bold"
+    android:gravity="center"
+    android:textColor="#0de062">
+
+
+</androidx.appcompat.widget.AppCompatTextView>
+    <com.smarteist.autoimageslider.SliderLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/imageSlider"
+        android:layout_margin="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="20sp"
+        android:text="get started"
+        android:textAllCaps="true"
+        android:textColor="#f5f7f6"
+        android:background="@drawable/mainpagebutton"
+        android:id="@+id/login_button"
+        >
+
+    </androidx.appcompat.widget.AppCompatButton>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Already have an Account?"
+            android:textColor="#2ce877">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="sign in"
+            android:textColor="#026efa"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:id="@+id/signup_button">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+

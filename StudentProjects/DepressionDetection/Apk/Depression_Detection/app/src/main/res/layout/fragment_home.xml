@@ -1,0 +1,105 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bottomlayout"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Good Evening\nAlexis"
+                android:textColor="#0a1df2"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imvCircular"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/depression4"
+                app:shapeAppearanceOverlay="@style/Circular"
+                app:strokeColor="#b3fcb1" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="23dp"
+            android:text="@string/homeString"
+            android:textColor="#2ded5d"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:ignore="MissingConstraints"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginBottom="40dp">
+  <com.google.android.material.button.MaterialButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:cornerRadius="30dp"
+      android:text="More Details"
+      android:textAllCaps="false"
+      android:layout_marginRight="5dp"
+      android:backgroundTint="#0264f7">
+
+  </com.google.android.material.button.MaterialButton>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cornerRadius="30dp"
+        android:backgroundTint="#34ed91"
+        android:text="View Your Profile"
+        android:textAllCaps="false">
+
+    </com.google.android.material.button.MaterialButton>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="5dp"
+        tools:ignore="UselessParent">
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/recyclerView">
+
+       </androidx.recyclerview.widget.RecyclerView>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+
+        app:menu="@menu/bottom_nav_menu"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
