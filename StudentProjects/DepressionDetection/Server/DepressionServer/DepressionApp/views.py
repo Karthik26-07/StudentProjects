@@ -123,7 +123,7 @@ def SaveQuestionsView(request):
          data.save()
          questionsData=questions.objects.all().values()
 
-         sweetify.success(request, 'Added', text='Successfully Added the Question', persistent='OK')
+         sweetify.success(request, 'Added', text='Successfully Added ', persistent='OK')
                 
 
                 # messages.error(request,'Successfully Added')    
@@ -209,7 +209,7 @@ def Add_ProgressQuestion(request):
          data.save()
          questionsData=Progress_questions.objects.all().values()
 
-         sweetify.success(request, 'Added', text='Successfully Added the Question', persistent='OK')
+         sweetify.success(request, 'Added', text='Successfully Added ', persistent='OK')
                 
 
                 # messages.error(request,'Successfully Added')    
@@ -270,3 +270,45 @@ def Progress_get_Answer(request):
         Returndata={"response":res}
         data.append(Returndata)
     return HttpResponse(json.dumps(data), content_type="application/json")
+
+
+def Suggetion(request):
+    suggetions=Suggestions.objects.all().values()
+
+    return render(request,'Home/Suggetion.html',{'Suggetions':suggetions})       
+
+
+def Add_Suggetion(request):
+    if request.method =='POST':
+        Suggestion=request.POST['suggetion']
+        Title=request.POST['title']
+        data = Suggestions(Suggestion=Suggestion,Title=Title)
+            
+        data.save()
+        suggetions=Suggestions.objects.all().values()
+
+        sweetify.success(request, 'Added', text='Successfully Added ', persistent='OK')
+                
+    return render(request,'Home/Suggetion.html',{'Suggetions':suggetions})      
+
+@csrf_exempt
+def UpdateButtonSuggetion(request):
+      if request.method == 'POST':
+        Id = request.POST["Id"]
+        flag = request.POST["flag"]
+        print(Id,flag)
+        Suggestions.objects.filter(id=Id).update(is_enabled=flag)
+        return render(request,'Home/Suggetion.html') 
+
+def Get_Suggetion(request):
+    if request.method=='GET':
+         data=[]
+         suggetions=Suggestions.objects.all().filter(is_enabled=1).values()
+         data.extend(suggetions)
+    
+    return HttpResponse(json.dumps(data), content_type="application/json")
+     
+
+
+
+

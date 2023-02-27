@@ -14,6 +14,7 @@
         android:gravity="center"
         android:text="1.Which of these is a symptom of depression?"
         android:textSize="20sp"
+        android:textColor="#bf1f84"
         android:textStyle="bold" />
 
     <RadioGroup

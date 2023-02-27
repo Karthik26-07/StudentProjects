@@ -34,6 +34,10 @@ urlpatterns = [
     path('Update_Progress_Button/',UpdateButtonProgress),
     path('get_Progress_Question/',getProgressQuestion),
     path('get_Progress_Answer/',Progress_get_Answer),
+    path('Suggetion/',Suggetion),
+    path('Add_Suggetion/',Add_Suggetion),
+    path('Update_Suggetion_Button/',UpdateButtonSuggetion),
+    path('GetSuggestion/',Get_Suggetion),
     
     
     

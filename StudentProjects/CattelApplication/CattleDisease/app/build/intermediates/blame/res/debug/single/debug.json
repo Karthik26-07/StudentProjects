@@ -1,0 +1,210 @@
+[
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_user.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\user.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_key.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\key.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_add_ic_call_24.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_baseline_add_ic_call_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_camera.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_menu_camera.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splashscreen.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\splashscreen.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_symptoms.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\symptoms.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_symptoms.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\fragment_symptoms.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_email.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\icon_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_local_phone_24.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_baseline_local_phone_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_symptoms_list_row.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\symptoms_list_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_doctor.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\doctor.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_slideshow.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_menu_slideshow.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_doctor.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\doctor.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_main_drawer.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_disease.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\disease.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_registration.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\activity_registration.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_app_bar_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_myshape.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\myshape.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_leftarrow.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\icon_leftarrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_message_24.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_baseline_message_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_location_on_24.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_baseline_location_on_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cows.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\cows.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_side_nav_bar.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_doctors_modal.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\doctors_modal.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_iupload.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\iupload.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_uploadimage.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\fragment_uploadimage.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_gallery.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\ic_menu_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\menu_home.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\menu\\home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_person.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-xxhdpi\\person.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_smartphone.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable\\icon_smartphone.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_logo.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\drawable-v24\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\build\\intermediates\\res\\merged\\debug\\layout_nav_header_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\CattleDisease\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    }
+]

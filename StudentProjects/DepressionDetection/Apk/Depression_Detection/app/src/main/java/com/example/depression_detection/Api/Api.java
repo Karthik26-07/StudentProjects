@@ -6,6 +6,7 @@ import com.example.depression_detection.Modal.DepressionTestModal;
 import com.example.depression_detection.Modal.LoginModal;
 import com.example.depression_detection.Modal.ProgressTestAnsModal;
 import com.example.depression_detection.Modal.ProgressTestModal;
+import com.example.depression_detection.Modal.SuggestionModal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,11 @@ public interface Api {
     Call<List<ProgressTestAnsModal>> getProgressAnswer(
             @Query("Progress_Answers") String Progress_Answers
     );
+    @GET("/GetSuggestion/")
+    Call<List<SuggestionModal>> getSuggestion(
+//            @Query("Progress_Answers") String Progress_Answers
+    );
+
 
 
 }

@@ -95,8 +95,18 @@
         
       </tr>
     </thead>
-    {% for questions in Questions%}
     <tbody>
+    {% if not Questions%}
+    <tr>
+      <td colspan="8" class="text-center text-danger">
+        No Record Found
+      </td>
+    </tr>
+
+    {%else%}
+
+    {% for questions in Questions%}
+   
      
      <tr>
      
@@ -126,8 +136,11 @@
 
      </tr>
      
-    </tbody>
+    
     {% endfor %}
+    {% endif %}
+
+  </tbody>
   </table>
   </div></div>
 </div>

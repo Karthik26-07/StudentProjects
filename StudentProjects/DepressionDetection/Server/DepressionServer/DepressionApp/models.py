@@ -53,5 +53,16 @@ class Progress_questions(models.Model):
     Pr_category = models.CharField(max_length=30)
     Pr_is_enabled = models.IntegerField(default = 1)       
 
+
+class Suggestions(models.Model):
+    class Meta:
+        managed = True
+        db_table='suggetion'
+
+    Suggestion = models.CharField(max_length=255)
+    Title = models.CharField(max_length=255)
+
+    is_enabled = models.IntegerField(default = 1)       
+
       
  

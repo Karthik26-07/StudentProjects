@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="#bf1f84"
         android:text="1.Which of these is a symptom of depression?"
         android:textSize="20sp"
         android:textStyle="bold" />

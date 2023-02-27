@@ -22,4 +22,9 @@
         android:name="com.example.depression_detection.ui.ProgressTest.ProgressTestFragment"
         android:label="Progress Test"
         tools:layout="@layout/fragment_progress_test" />
+    <fragment
+        android:id="@+id/nav_suggestion"
+        android:name="com.example.depression_detection.ui.Suggestion.SuggestionFragment"
+        android:label="Suggestion"
+        tools:layout="@layout/fragment_suggestion" />
 </navigation>

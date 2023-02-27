@@ -1,0 +1,176 @@
+{% include 'common/Navbar.html' %}
+
+<!-- Modal -->
+<form class="" method="post" action="/Add_Suggetion/">
+    {% csrf_token %}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <div class="container">
+                        <h3 class="text-center Monospace" id="exampleModalLabel">Suggestions</h3>
+                    </div>
+
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mx-2">
+                        <label for="exampleInputOption2"> <b style="font-family:sans-serif;" >Title</b></label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
+                      </div> 
+                    <div class="form-group mx-2">
+                        <label for="exampleFormControlTextarea1">
+                            <b style="font-family:sans-serif;">Suggetion</b> </label>
+
+                        <textarea class="form-control" id="suggetion" name="suggetion" rows="3" placeholder="Suggestion" required></textarea>
+
+                    </div>
+                    <!-- <div class="form-group mx-2">
+            <label for="exampleInputOption1"> <b style="font-family:sans-serif;" >Option 1</b></label>
+            <input type="text" class="form-control" id="option1" name="option1" placeholder="Option 1" required>
+            
+          </div>
+          <div class="form-group mx-2">
+            <label for="exampleInputOption2"> <b style="font-family:sans-serif;" >Option 2</b></label>
+            <input type="text" class="form-control" id="option2" name="option2" placeholder="Option 2" required>
+          </div> -->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn text-white " style="background-color:#4608f2; width: auto;" name="submit"
+                        type="submit">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="form-group container mt-5">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-body">
+            <div class="container my-2 ">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn text-white" style="background-color:#4608f2; width: auto;"
+                    data-toggle="modal" data-target="#exampleModal">
+                    Add Suggestion
+                </button>
+            </div>
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Suggestion</th>
+                        <th scope="col">Status</th>
+                       
+
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                {% if not Suggetions%}
+                <tr>
+                    <td colspan="8" class="text-center text-danger">
+                        No Record Found
+                    </td>
+                </tr>
+
+                {%else%}
+                {% for suggetion in Suggetions%}
+                
+
+                    <tr>
+
+                        <td>{{forloop.counter}}</td>
+                        <td>{{suggetion.Title}}</td>
+                        <td>{{suggetion.Suggestion}}</td>
+                        <td>{%if suggetion.is_enabled %}
+                            <span style="color:#36b028;text-align:center;">Active</span>
+
+                            {%else%}
+                            <span style="color:#fc0313;text-align:center;">Deactive</span>
+
+                            {% endif %}
+                        </td>
+                        <td>{%if suggetion.is_enabled %}
+                            <p> <button type="button" id="button" onclick="change('{{suggetion.id}}','0');"
+                                    value="{{questions.id}}" class="btn btn-danger">Disable</button></p>
+
+                            {%else%}
+                            <p> <button type="button" id="button" onclick="change('{{suggetion.id}}','1');"
+                                    value="{{questions.id}}" class="btn btn-success">Enable</button></p>
+
+                            {% endif %}
+
+
+                        </td>
+
+                    </tr>
+
+               
+                {% endfor %}
+                {% endif %}
+
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+{% sweetify %}
+
+<script type="text/javascript">
+    function change(id, data) {
+  
+      Swal.fire({
+        title: 'Are you sure?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: 'No',
+  
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            type: "POST",
+            url: "/Update_Suggetion_Button/",
+  
+            data: {
+              Id: id,
+              flag: data
+            },
+            timeout: 10000,
+            success: function () {
+              window.location.href = "/Suggetion/";
+  
+            }
+          });
+        } else if (result.isDenied) {
+  
+        }
+      })
+    }
+  
+  </script>
+
+
+
+</body>
+
+</html>

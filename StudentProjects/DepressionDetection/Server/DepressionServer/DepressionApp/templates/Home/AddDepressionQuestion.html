@@ -3,39 +3,39 @@
 
 
 <!-- Modal -->
-<form class="" method="post" action="/Save_Questions/" >
+<form class="" method="post" action="/Save_Questions/">
   {% csrf_token %}
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header ">
-        <div class="container">
-          <h3 class="text-center Monospace" id="exampleModalLabel"> Depression Question</h3>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="container">
+            <h3 class="text-center Monospace" id="exampleModalLabel"> Depression Question</h3>
+          </div>
+
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-       
-        
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group mx-2">
-          <label for="exampleFormControlTextarea1">
-           <b style="font-family:sans-serif;" >Question</b> </label>
-          
-          <textarea class="form-control" id="Question" name="Question" rows="3" required></textarea>
-         
-        </div>
-        <div class="form-group mx-2">
-          <label for="exampleInputOption1"> <b style="font-family:sans-serif;" >Option 1</b></label>
-          <input type="text" class="form-control" id="option1" name="option1" placeholder="Option 1" required>
-          
-        </div>
-        <div class="form-group mx-2">
-          <label for="exampleInputOption2"> <b style="font-family:sans-serif;" >Option 2</b></label>
-          <input type="text" class="form-control" id="option2" name="option2" placeholder="Option 2" required>
-        </div>
-        <!--  <div class="form-group mx-2">
+        <div class="modal-body">
+          <div class="form-group mx-2">
+            <label for="exampleFormControlTextarea1">
+              <b style="font-family:sans-serif;">Question</b> </label>
+
+            <textarea class="form-control" id="Question" name="Question" rows="3" required></textarea>
+
+          </div>
+          <div class="form-group mx-2">
+            <label for="exampleInputOption1"> <b style="font-family:sans-serif;">Option 1</b></label>
+            <input type="text" class="form-control" id="option1" name="option1" placeholder="Option 1" required>
+
+          </div>
+          <div class="form-group mx-2">
+            <label for="exampleInputOption2"> <b style="font-family:sans-serif;">Option 2</b></label>
+            <input type="text" class="form-control" id="option2" name="option2" placeholder="Option 2" required>
+          </div>
+          <!--  <div class="form-group mx-2">
           <label for="exampleInputOption3"><b>Option 3</b></label>
           <input type="text" class="form-control" id="option3" name="option3" placeholder="Option 3" required>
           
@@ -48,27 +48,27 @@
           <input type="text" class="form-control" id="correctAns" name="correctAns" placeholder="Correct Answer Number" required>
           
         </div> -->
-        <div class="form-group mx-2 ">
-          <label for="exampleFormControlSelect1">
-            <b style="font-family:sans-serif;" >Category</b></label>
-          <select class="form-control" id="selectcategory" name="selectcategory" required>
-            <option value="">Select Category</option>
-            <option value="Teenager">Teenager </option>
-            <option value="Adult">Adult</option>
-            <option value="Senior Citizen">Senior Citizen</option>
-  
-            
-          </select>
+          <div class="form-group mx-2 ">
+            <label for="exampleFormControlSelect1">
+              <b style="font-family:sans-serif;">Category</b></label>
+            <select class="form-control" id="selectcategory" name="selectcategory" required>
+              <option value="">Select Category</option>
+              <option value="Teenager">Teenager </option>
+              <option value="Adult">Adult</option>
+              <option value="Senior Citizen">Senior Citizen</option>
+
+
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button class="btn text-white " style="background-color:#4608f2; width: auto;" name="submit"
-        type="submit"  >Save</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="btn text-white " style="background-color:#4608f2; width: auto;" name="submit"
+            type="submit">Save</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </form>
 
 
@@ -79,114 +79,114 @@
     <div class="card-body">
       <div class="container my-2 ">
         <!-- Button trigger modal -->
-      <button type="button" class="btn text-white" style="background-color:#4608f2; width: auto;" data-toggle="modal" data-target="#exampleModal">
-        Add Question
-      </button>
+        <button type="button" class="btn text-white" style="background-color:#4608f2; width: auto;" data-toggle="modal"
+          data-target="#exampleModal">
+          Add Question
+        </button>
       </div>
-  <table class="table table-hover table-striped">
-    <thead >
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Question</th>
-        <th scope="col">Category</th>
-        <th scope="col">Status</th>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Question</th>
+            <th scope="col">Category</th>
+            <th scope="col">Status</th>
 
-        <th scope="col">Action</th>
-        
-      </tr>
-    </thead>
-    {% for questions in Questions%}
-    <tbody>
-     
-     <tr>
-     
-      <td>{{forloop.counter}}</td>
-      <td>{{questions.question}}</td>
-      <td>{{questions.category}}</td>
-      <td>{%if questions.is_enabled %}
-        <span style="color:#36b028;text-align:center;">Active</span>
+            <th scope="col">Action</th>
 
-        {%else%}
-        <span style="color:#fc0313;text-align:center;">Deactive</span>
+          </tr>
+        </thead>
+        <tbody>
+          {% if not Questions%}
+          <tr>
+            <td colspan="8" class="text-center text-danger">
+              No Record Found
+            </td>
+          </tr>
 
-        {% endif %}
-    </td>
-    <td>{%if questions.is_enabled %}
-      <p> <button type="button" id="button" onclick="change('{{questions.id}}','0');"
-              value="{{questions.id}}" class="btn btn-danger">Disable</button></p>
-
-      {%else%}
-      <p> <button type="button" id="button" onclick="change('{{questions.id}}','1');"
-              value="{{questions.id}}" class="btn btn-success">Enable</button></p>
-
-      {% endif %}
+          {%else%}
+          {% for questions in Questions%}
 
 
-  </td>
+          <tr>
 
-     </tr>
-     
-    </tbody>
-    {% endfor %}
-  </table>
-  </div></div>
+            <td>{{forloop.counter}}</td>
+            <td>{{questions.question}}</td>
+            <td>{{questions.category}}</td>
+            <td>{%if questions.is_enabled %}
+              <span style="color:#36b028;text-align:center;">Active</span>
+
+              {%else%}
+              <span style="color:#fc0313;text-align:center;">Deactive</span>
+
+              {% endif %}
+            </td>
+            <td>{%if questions.is_enabled %}
+              <p> <button type="button" id="button" onclick="change('{{questions.id}}','0');" value="{{questions.id}}"
+                  class="btn btn-danger">Disable</button></p>
+
+              {%else%}
+              <p> <button type="button" id="button" onclick="change('{{questions.id}}','1');" value="{{questions.id}}"
+                  class="btn btn-success">Enable</button></p>
+
+              {% endif %}
+
+
+            </td>
+
+          </tr>
+
+          {% endfor %}
+          {% endif %}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-crossorigin="anonymous"></script>
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-crossorigin="anonymous"></script>
+  integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {% load sweetify %}
-  {% sweetify %}
+{% sweetify %}
 
 <script type="text/javascript">
-    function change(id, data) {
-          
-            Swal.fire({
-  title: 'Are you sure?',
-  showDenyButton: false,
-  showCancelButton: true,
-  confirmButtonText: 'Yes',
-  denyButtonText: 'No',
-  
-}).then((result) => {
-  if (result.isConfirmed) {
-    $.ajax({
-                    type: "POST",
-                    url: "/Update_Depression_Button/",
+  function change(id, data) {
 
-                    data: {
-                        Id: id,
-                        flag: data
-                    },
-                    timeout: 10000,
-                    success: function () {
-                        window.location.href = "/Depression_Question/";
-        
-                    }
-                });
-  } else if (result.isDenied) {
-    
+    Swal.fire({
+      title: 'Are you sure?',
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      denyButtonText: 'No',
+
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          type: "POST",
+          url: "/Update_Depression_Button/",
+
+          data: {
+            Id: id,
+            flag: data
+          },
+          timeout: 10000,
+          success: function () {
+            window.location.href = "/Depression_Question/";
+
+          }
+        });
+      } else if (result.isDenied) {
+
+      }
+    })
   }
-})
-    }
-           
- </script>
+
+</script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-  
-
- 
-
