@@ -1,0 +1,142 @@
+{% extends 'admin/adminNavigation.html' %}
+{% block content %}
+{% load static %}
+
+<div class=""
+>
+<div class="card w-50 my-5 container
+bg-light">
+    <div class="my-4">
+        <h3 class="text-center"><b>Aptitude Question</b></h3>
+    </div>
+
+    <div class="card-body">
+        <form id="formAddCollege" action="/Add_aptitude_question/" 
+        method="post" >
+            {% csrf_token %}
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 ml-4">
+                    <label for="exampleFormControlSelect1"><b style="font-family:sans-serif;">Type</b></label>
+
+                </div>
+                <div class="col-md-8">
+                    <select class="form-control" id="type" name="type" >
+                        <option value="">--Select--</option>
+                        <option value="English">English </option>
+                        <option value="Maths">Maths</option>
+                        <option value="Programming">Programming</option>
+
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 ml-4">
+                    <label for="exampleFormControlTextarea1">
+                        <b style="font-family:sans-serif;">Question</b> </label>
+
+                </div>
+                <div class="col-md-8">
+                    <textarea class="form-control" id="Question" name="Question" rows="3"></textarea>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 ml-4">
+                    <label for="exampleInputOption1"><b style="font-family:sans-serif;">Option 1</b></label>
+
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="option1" name="option1" placeholder="Option 1" required>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 ml-4">
+                    <label for="exampleInputOption2"><b style="font-family:sans-serif;">Option 2</b></label>
+
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="option2" name="option2" placeholder="Option 2" required>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 ml-4">
+                    <label for="exampleInputOption3"><b style="font-family:sans-serif;">Option 3</b></label>
+
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="option3" name="option3" placeholder="Option 3" required>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 ml-4">
+                    <label for="exampleInputOption4"><b style="font-family:sans-serif;">Option 4</b></label>
+
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="option4" name="option4" placeholder="Option 4" required>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 ml-4">
+                    <label for="exampleInputCorrectOption"><b> Answer</b></label>
+
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="correctAns" name="correctAns"
+                        placeholder="Correct Answer" required>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="ml-4 my-3">
+            <button class="btn text-white  bg-primary" style=" width: 95%;" 
+            type="submit" onclick="return aptitude()" >Save</button>
+        </div>
+       </form>
+    </div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+  {% sweetify %}
+
+{% endblock %}
