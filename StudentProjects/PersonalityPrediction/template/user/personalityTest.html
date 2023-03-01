@@ -1,0 +1,69 @@
+{% extends 'user/userNavigation.html' %}
+{% block content %}
+{% load static %}
+
+<div class="">
+<div class="container mt-4 ml-4 text-center">
+    <h3><b style="font-family:sans-serif;">Personality Question</b></h3>
+</div>
+{% if not Personality%}
+<div>
+    <p class="text-danger"> Not found</p>
+</div>
+{%else%}
+{% for personality in Personality%}
+<div class="card container mt-5">
+    <div class="card-body">
+
+
+        <div class="row">
+            <div class="col-md-0">
+                {{forloop.counter}} .
+            </div>
+            <div class="col">
+                <p><b style="font-family:sans-serif;">
+                    {{personality.question}}</b>
+                </p>
+            </div>
+
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadio1[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="Strongly disagree" >
+            <label class="custom-control-label" for="customRadio1[{{forloop.counter}}]"
+            style="font-family:sans-serif;">Strongly disagree</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadio2[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="Disagree">
+            <label class="custom-control-label" for="customRadio2[{{forloop.counter}}]"
+            style="font-family:sans-serif;">Disagree</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadio3[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="Neither disagree nor agreee">
+            <label class="custom-control-label" for="customRadio3[{{forloop.counter}}]"
+            style="font-family:sans-serif;">Neither disagree nor agreee</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadio4[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="Agree">
+            <label class="custom-control-label" for="customRadio4[{{forloop.counter}}]"
+            style="font-family:sans-serif;">Agree</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadio5[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="Strongly agree" >
+            <label class="custom-control-label" for="customRadio5[{{forloop.counter}}]"
+            style="font-family:sans-serif;">Strongly agree</label>
+          </div>
+
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+<div class="container text-center mt-5">
+    <button class="btn text-white  bg-primary" style=" width: 10%;" name="submit"
+    onclick="location.href = '/aptitudetest/';">Next</button>
+</div>
+
+</div>
+
+
+
+{% endblock %}

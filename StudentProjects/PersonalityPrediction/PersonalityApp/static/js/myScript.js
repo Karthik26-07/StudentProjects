@@ -61,24 +61,24 @@ function aptitude() {
         return false;
     }
     else if (Question == "") {
-        window.alert('Please insert Question');
+        window.alert('Please provide Question');
         return false;
     }
     else if (option1 == "") {
-        window.alert('Please insert Option1');
+        window.alert('Please provide Option1');
         return false;
     }
     else if (option2 == "") {
-        window.alert('Please insert Option2');
+        window.alert('Please provide Option2');
         return false;
     } else if (option3 == "") {
-        window.alert('Please insert Option3');
+        window.alert('Please provide Option3');
         return false;
     } else if (option4 == "") {
-        window.alert('Please insert Option4');
+        window.alert('Please provide Option4');
         return false;
     } else if (correctAns == "") {
-        window.alert('Please insert correct option');
+        window.alert('Please provide correct option');
         return false;
     }
 
@@ -86,6 +86,8 @@ function aptitude() {
 
 
 }
+
+
 function personality() {
     var Question = document.getElementById('Question').value;
     var Openness = document.getElementById('Openness').value;
@@ -94,7 +96,7 @@ function personality() {
     var Agreebleness = document.getElementById('Agreebleness').value;
     var Neuroticism = document.getElementById('Neuroticism').value;
     if (Question == "") {
-        window.alert('Please insert the question');
+        window.alert('Please provide the question');
         return false;
     }
     else if (Openness == "") {
@@ -119,4 +121,24 @@ function personality() {
     }
     return true;
 
+}
+
+
+function jobdetails() {
+    var Designation = document.getElementById('designation').value;
+    var Salary = document.getElementById('salary').value;
+    var Place = document.getElementById('place').value;
+
+    if (Designation == "") {
+        window.alert('Please provide Designation');
+        return false;
+    }
+    else if (Salary == "") {
+        window.alert('Please provide Salary');
+        return false;
+    }  if (Place == "") {
+        window.alert('Please provide Place');
+        return false;
+    }
+    return true;
 }

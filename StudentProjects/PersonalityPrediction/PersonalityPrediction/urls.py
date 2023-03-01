@@ -32,4 +32,10 @@ urlpatterns = [
     path('Add_personality_question/',Add_Pesonality),
     path('displayAptitude/',displayAptitude),
     path('displayPersonality/',DisplayPersonality),
+    path('test/',personalityTest),
+    path('aptitudetest/',aptitudeTest),
+    path('Add_job_details/',Add_Job),
+    path('Save_job_details/',Save_Job),
+    path('job_requirement/',jobRequirement),
+    path('jobdetails/',jobdetails),
 ]

@@ -1,0 +1,138 @@
+{% extends 'user/userNavigation.html' %}
+{% block content %}
+{% load static %}
+
+<div>
+    <div class="container mt-4 ml-4 text-center">
+        <h3><b style="font-family:sans-serif;">Aptitude Question</b></h3>
+    </div>
+    {% if not Aptitude%}
+    <div>
+        <p class="text-danger"> Not found</p>
+    </div>
+    {%else%}
+   
+    {% with prev="" %}
+    {% for aptitude in Aptitude%}
+   
+    {% ifequal aptitude.questionType prev %} 
+    <div>
+        <!-- <div>
+            <p><b style="font-family:sans-serif;">
+                    {{prev}}</b>
+            </p>
+        </div> -->
+        <div class="card container mt-5">
+            <div class="card-body">
+        
+        <div>
+           
+            <p><b style="font-family:sans-serif;">
+    
+               
+               
+              {{forloop.counter}}  .   {{aptitude.questions}}</b>
+          
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio1[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option1}}" >
+                    <label class="custom-control-label" for="customRadio1[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option1}}</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option2}}">
+                    <label class="custom-control-label" for="customRadio2[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option2}}</label>
+                  </div>
+            </div>
+            <div class="col-md-2">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio3[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option3}}">
+                    <label class="custom-control-label" for="customRadio3[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option3}}</label>
+                  </div>
+                  <div class="custom-control custom-radio ">
+                    <input type="radio" id="customRadio4[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option4}}">
+                    <label class="custom-control-label" for="customRadio4[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option4}}</label>
+                  </div>
+                 
+    
+            </div>
+        </div>
+       
+          
+    </div>
+    </div></div>
+   
+    
+    {%else%}
+    <div>
+        <div>
+            <p><b style="font-family:sans-serif;">
+                    {{prev}}</b>
+            </p>
+        </div>
+        <div class="card container mt-5">
+            <div class="card-body">
+        
+        <div>
+           
+            <p><b style="font-family:sans-serif;">
+    
+               
+               
+              {{forloop.counter}}  .   {{aptitude.questions}}</b>
+          
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio1[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option1}}" >
+                    <label class="custom-control-label" for="customRadio1[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option1}}</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option2}}">
+                    <label class="custom-control-label" for="customRadio2[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option2}}</label>
+                  </div>
+            </div>
+            <div class="col-md-2">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio3[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option3}}">
+                    <label class="custom-control-label" for="customRadio3[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option3}}</label>
+                  </div>
+                  <div class="custom-control custom-radio ">
+                    <input type="radio" id="customRadio4[{{forloop.counter}}]" name="customRadio[{{forloop.counter}}]" class="custom-control-input" value="{{aptitude.option4}}">
+                    <label class="custom-control-label" for="customRadio4[{{forloop.counter}}]"
+                    style="font-family:sans-serif;">{{aptitude.option4}}</label>
+                  </div>
+                 
+    
+            </div>
+        </div>
+       
+          
+    </div>
+    </div></div>
+    {% endifequal %}
+   
+
+
+    
+   
+   {% endfor %}
+   {% endwith %}
+
+    {% endif %}
+
+
+</div>
+
+{% endblock %}

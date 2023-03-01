@@ -2,6 +2,8 @@ from django.shortcuts import render
 from PersonalityApp.models import *
 from django.db.models import Q
 import sweetify
+from django.http import HttpResponse
+import json
 
 
 # Create your views here.
@@ -139,3 +141,47 @@ def DisplayPersonality(request):
     personality=personality_question.objects.all().values()
 
     return render(request,'admin/DisplayPersonalityQuestion.html',{'Personality':personality}) 
+
+def personalityTest(request):
+      aptitude=apptitude_question.objects.all().values()
+      personality=personality_question.objects.all().values()
+      return render(request, 'user/personalityTest.html',{'Personality':personality,'Aptitude':aptitude})
+
+def aptitudeTest(request):
+      aptitude=apptitude_question.objects.all().values()
+      personality=personality_question.objects.all().values()
+      return render(request, 'user/aptitudeTest.html',{'Personality':personality,'Aptitude':aptitude})
+
+
+def Add_Job(request):
+    
+    return render(request,'admin/jobDetails.html') 
+
+def Save_Job(request):
+      if request.method=="POST":
+        
+         Designation = request.POST["designation"]
+         Place = request.POST["salary"]
+         Salary = request.POST["place"]
+         jobid = request.POST["jobid"]
+         data=job_details(jobid=jobid,designation=Designation,salary=Salary,place=Place)
+         data.save()
+         sweetify.success(request, 'Added', text='Successfully Added ', persistent='OK')
+   
+      return render(request,'admin/jobDetails.html') 
+
+def jobRequirement(request):
+    
+    data=job_details.objects.all().values()
+    return render(request,'admin/jobRequirement.html',{'jobdata':data}) 
+
+def jobdetails(request):
+    if request.method=="GET":
+        data=[] 
+        ids=request.GET["id"]
+        jobdata=job_details.objects.all().filter(id=ids).values()
+        data.extend(jobdata)
+        print(data)
+ 
+    return HttpResponse(json.dumps(data), content_type="application/json")
+    

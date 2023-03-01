@@ -49,6 +49,14 @@ class personality_question(models.Model):
     agreeableness=models.CharField(max_length=250)
     neuroticism=models.CharField(max_length=250)
 
+class job_details(models.Model):
+    class Meta:
+        db_table:"job_details"
+    
+    designation=models.CharField(max_length=250)
+    salary=models.CharField(max_length=250)
+    place=models.CharField(max_length=250)
+    jobid=models.CharField(max_length=250)
 
 
     

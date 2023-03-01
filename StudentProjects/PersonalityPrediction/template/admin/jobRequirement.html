@@ -1,0 +1,223 @@
+{% extends 'admin/adminNavigation.html' %}
+{% block content %}
+{% load static %}
+
+<div class="">
+    <div class="card w-50 my-5 container
+bg-light">
+        <div class="my-4">
+            <h3 class="text-center"><b>Job Requirement</b></h3>
+        </div>
+
+        <div class="card-body">
+            <form id="formAddCollege" action="/Save_job_details/" method="post">
+                {% csrf_token %}
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            <label for="exampleInputjobid">
+                                <b style="font-family:sans-serif;">Job ID</b> </label>
+
+                        </div>
+
+                        <div class="col-md-8">
+
+
+                            <!-- <label for="trainnumber"><b>Device Id</b></label> -->
+                            <select id="deviceid" name="deviceid" class="form-control "
+                                onchange="myfunction(this.value)">
+                                <option value="">--Select--</option>
+                                {% for job in jobdata%}
+                                <option value="{{job.id}}">{{job.jobid}}</option>
+                                {% endfor %}
+
+                            </select>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div id="data">
+                  <div class="">
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            
+                            <label> <b style="font-family:sans-serif;">Designation:</b> </label>
+                            
+
+                        </div>
+                        <div class="col-md-8 ">
+                            <label><b style="font-family:sans-serif;" id="Designation"></b> </label>
+                            
+
+                        </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            
+                            <label>  <b style="font-family:sans-serif;">Salary:</b> </label>
+
+                        </div>
+                        <div class="col-md-8">
+                            <label><b style="font-family:sans-serif;" id="salary"></b> </label>
+
+                        </div>
+                    </div>
+                  </div> <div class="">
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            
+                           
+                            <label>  <b style="font-family:sans-serif;">Place:</b> </label>
+
+                        </div>
+                        <div class="col-md-8 ">
+                           
+                            <label><b style="font-family:sans-serif;" id="place"></b> </label>
+
+                        </div>
+                    </div>
+                  </div>
+
+                  
+
+
+
+
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            <label for="exampleInputdesignation"><b
+                                    style="font-family:sans-serif;">Experience</b></label>
+
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="Experience" name="Experience"
+                                placeholder="Experience">
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            <label for="exampleInputsalary"><b style="font-family:sans-serif;">Qualifiction</b></label>
+
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="Qualifiction" name="Qualifiction"
+                                placeholder="Qualifiction">
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            <label for="exampleInputplace"><b style="font-family:sans-serif;">Key Skills</b></label>
+
+                        </div>
+                        <div class="col-md-8" >
+                            <input type="text" class="form-control" id="keySkills" name="keySkills"
+                                placeholder="Key Skills">
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="ml-4 my-3 require" >
+                    <button class="btn text-white  bg-primary" style=" width: 95%;" type="submit"
+                        onclick="return jobdetails()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+{% sweetify %}
+
+<script>
+  $('#data').hide();   
+</script>
+<script>
+    function myfunction(str) {
+       
+        if (str === "") {
+           
+            return;
+        } else {
+
+            $.ajax({
+                type: "GET",
+                url: "/jobdetails/",
+            
+                data: { id: str },
+                success: function (result) {
+                    $("#Designation").text(result[0].designation);
+                    $("#salary").text(result[0].salary);
+                    $("#place").text(result[0].place);
+
+                
+                    $('#data').show();
+                    console.log(result[0]);
+                    return;
+
+                }
+            });
+        }
+
+    }
+
+
+</script>
+
+
+
+
+
+<script>
+    function jobdetails() {
+        var Designation = document.getElementById('designation').value;
+        var Salary = document.getElementById('salary').value;
+        var Place = document.getElementById('place').value;
+
+        if (Designation == "") {
+            window.alert('Please provide Designation');
+            return false;
+        }
+        else if (Salary == "") {
+            window.alert('Please provide Salary');
+            return false;
+        } if (Place == "") {
+            window.alert('Please provide Place');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
+{% endblock %}
