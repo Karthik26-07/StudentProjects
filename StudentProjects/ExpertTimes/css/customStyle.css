@@ -1,0 +1,94 @@
+.selectWrapper{
+                border-radius:36px;
+                display:inline-block;
+                overflow:hidden;
+                background:#cccccc;
+                border:1px solid #cccccc;
+            }
+            .selectBox{
+                width:200px;
+                height:40px;
+                border:1px;
+                border-color:#000066;
+                text-align-last:center;
+
+            }
+            .carousel .carousel-item {
+                height: 500px;
+            }
+
+            .paragraph {
+                border-radius: 50%;
+                height: 500px;
+                width: 500px;
+            }
+            .box {
+                padding: 10px;
+                width: 100%;
+                height: auto;
+                border:3px solid #000066;
+                word-break: break-word;
+                border-radius:36px;
+
+            }
+            .btns {
+
+                border: none;
+                color: white;
+                padding: 8px 30px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 50px;
+                font-size: 16px;
+                /*margin: 2px 2px;*/
+                background-color: #000066;
+                width: 150px;
+                display: inline-block;
+            
+            }
+            .center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            a:hover{
+                color: white;
+            }
+            .footer{
+                background-color:#000066; 
+                height: 320px;
+            }
+            
+            table {
+                width: 80%;
+                border: 1px solid !important;
+                border-collapse: collapse;
+                /* page-break-after: always; */
+              }
+              
+              th {
+                height: 40px;
+                border: 1px solid;
+                /* page-break-after: always; */
+              }
+              td{
+                  border: 1px solid;
+                  height: 30px;
+                  text-align: center;
+                  /* page-break-after: always; */
+                  
+              
+              }
+              h1 {
+                text-align: center;
+                /* page-break-after: always; */
+              }
+              .center {
+                margin-left: auto;
+                margin-right: auto;
+                
+              }
+             
+data{
+    margin-left: 180px;
+    
+}
