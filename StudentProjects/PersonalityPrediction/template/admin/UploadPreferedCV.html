@@ -1,0 +1,169 @@
+{% extends 'admin/adminNavigation.html' %}
+{% block content %}
+{% load static %}
+
+<div class="">
+    <div class="card w-50 my-5 container
+bg-light">
+        <div class="my-4">
+            <h3 class="text-center"><b>Upload Prefered CV</b></h3>
+        </div>
+
+        <div class="card-body">
+            <form id="formAddCollege" action="/#/" method="post">
+                {% csrf_token %}
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 ml-4">
+                            <label for="exampleInputjobid">
+                                <b style="font-family:sans-serif;">Job ID</b> </label>
+
+                        </div>
+
+                        <div class="col-md-8">
+
+
+                            <!-- <label for="trainnumber"><b>Device Id</b></label> -->
+                            <select id="jobid" name="Jobid" class="form-control "
+                                onchange="myfunction(this.value)">
+                                <option value="">--Select--</option>
+                                {% for job in jobdata%}
+                                <option value="{{job.id}}">{{job.jobid}}</option>
+                                {% endfor %}
+
+                            </select>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div id="data">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-3 ml-4">
+
+                                <label> <b style="font-family:sans-serif;">Designation:</b> </label>
+
+
+                            </div>
+                            <div class="col-md-8 ">
+                                <label><b style="font-family:sans-serif;" id="Designation"></b> </label>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-3 ml-4">
+
+                                <label> <b style="font-family:sans-serif;">Salary:</b> </label>
+
+                            </div>
+                            <div class="col-md-8">
+                                <label><b style="font-family:sans-serif;" id="salary"></b> </label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-3 ml-4">
+
+
+                                <label> <b style="font-family:sans-serif;">Place:</b> </label>
+
+                            </div>
+                            <div class="col-md-8 ">
+
+                                <label><b style="font-family:sans-serif;" id="place"></b> </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 ml-4">
+                                <label for="exampleInputdesignation"><b
+                                        style="font-family:sans-serif;">Prefered CVs</b></label>
+
+                            </div>
+                            <div class="col-md-8">
+                                
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">.doc type file only</label>
+                                      <input type="file" class="form-control-file" id="cv" accept=".doc,.pdf">
+                                    </div>
+                                  
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                  
+
+                    
+                    <div class="ml-4 my-3 require">
+                        <button class="btn text-white  bg-primary" style=" width: 95%;" type="submit"
+                            onclick="return jobrequirement()">Scan</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+{% sweetify %}
+
+<script>
+    $('#data').hide();   
+</script>
+<script>
+    function myfunction(str) {
+
+        if (str === "") {
+            $('#data').hide();
+            return;
+        } else {
+
+            $.ajax({
+                type: "GET",
+                url: "/jobdetails/",
+
+                data: { id: str },
+                success: function (result) {
+                    $("#Designation").text(result[0].designation);
+                    $("#salary").text(result[0].salary);
+                    $("#place").text(result[0].place);
+
+
+                    $('#data').show();
+                    console.log(result[0]);
+                    return;
+
+                }
+            });
+        }
+
+    }
+
+
+</script>
+{% endblock %}

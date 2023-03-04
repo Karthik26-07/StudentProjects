@@ -11,6 +11,7 @@ function validateUser() {
     var address = document.getElementById('address').value;
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
+    var CV = document.getElementById('docfile').value;
 
     if (name == "") {
         window.alert('Please provide Name');
@@ -44,7 +45,11 @@ function validateUser() {
         window.alert('Please provide Password');
         return false;
     }
-
+    else if (CV === "No file chosen") {
+        window.alert('Please provide CV');
+        return false;
+    }
+  
     return true;
 }
 
@@ -124,21 +129,40 @@ function personality() {
 }
 
 
-function jobdetails() {
-    var Designation = document.getElementById('designation').value;
-    var Salary = document.getElementById('salary').value;
-    var Place = document.getElementById('place').value;
+// function jobdetails() {
+//     var Designation = document.getElementById('designation').value;
+//     var Salary = document.getElementById('salary').value;
+//     var Place = document.getElementById('place').value;
 
-    if (Designation == "") {
-        window.alert('Please provide Designation');
-        return false;
-    }
-    else if (Salary == "") {
-        window.alert('Please provide Salary');
-        return false;
-    }  if (Place == "") {
-        window.alert('Please provide Place');
-        return false;
-    }
-    return true;
-}
+//     if (Designation == "") {
+//         window.alert('Please provide Designation');
+//         return false;
+//     }
+//     else if (Salary == "") {
+//         window.alert('Please provide Salary');
+//         return false;
+//     }  if (Place == "") {
+//         window.alert('Please provide Place');
+//         return false;
+//     }
+//     return true;
+// }
+
+// function jobrequirement() {
+//     var Experience = document.getElementById('Experience').value;
+//     var Qualifiction = document.getElementById('Qualifiction').value;
+//     var Skills = document.getElementById('keySkills').value;
+
+//     if (Experience == "") {
+//         window.alert('Please provide Experience');
+//         return false;
+//     }
+//     else if (Qualifiction == "") {
+//         window.alert('Please provide Qualification');
+//         return false;
+//     } if (Skills == "") {
+//         window.alert('Please provide Key Skills');
+//         return false;
+//     }
+//     return true;
+// }

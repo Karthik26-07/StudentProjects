@@ -1,59 +1,224 @@
-{% extends 'admin/adminNavigation.html' %}
-{% block content %}
-{% load static %}
+{% extends 'admin/adminNavigation.html' %} {% block content %} {% load static %}
 
 <div class="form-group container mt-5">
-    {% csrf_token %}
-    <div class="card bg-ligt">
-        <div class="card-body bg-ligt">
+  {% csrf_token %}
+  <div class="card bg-ligt">
+    <h3 class="card-title text-center mt-4" style="font-family: sans-serif">
+      Personality Question
+    </h3>
+    <div class="card-body bg-ligt">
+      <table class="table table-hover table-borderless my-3">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Question</th>
 
-            <table class="table table-hover table-borderless my-3">
-                <thead class="table-primary">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Question</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if not Personality%}
+          <tr>
+            <td colspan="8" class="text-center text-danger">No Record Found</td>
+          </tr>
 
-                        <th scope="col">Action</th>
+          {%else%} {% for personality in Personality%}
 
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if not Personality%}
-                    <tr>
-                        <td colspan="8" class="text-center text-danger">
-                            No Record Found
-                        </td>
-                    </tr>
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{personality.question}}</td>
+            <td>
+              <button type="button" id="Update" onclick="update('{{personality.id}}');" value="{{personality.id}}"
+                class="btn btn-warning">
+                Edit
+                <!-- data-toggle="modal"
+                                data-target="#exampleModal" -->
+              </button>
+              <button type="button" id="button" onclick="Delete('{{personality.id}}');" value="{{personality.id}}"
+                class="btn btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
 
-                    {%else%}
-                    {% for personality in Personality%}
-
-
-                    <tr>
-
-                        <td>{{forloop.counter}}</td>
-                        <td>{{personality.question}}</td>
-                        <td>
-                            <button type="button"id="Update" onclick="update('{{personality.id}}');"
-                                value="{{personality.id}}" class="btn btn-warning ">Edit
-                            </button>
-                                <button type="button" id="button" onclick="Delete('{{personality.id}}');"
-                                value="{{personality.id}}" class="btn btn-danger">Delete</button>
-
-                        </td>
-
-
-
-
-                    </tr>
-
-                    {% endfor %}
-                    {% endif %}
-                </tbody>
-
-            </table>
-        </div>
+          {% endfor %} {% endif %}
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
+
+<!-- ---Modal--- -->
+
+<form class="" method="post" action="/updatepersonalityVIEW/">
+  {% csrf_token %}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="container">
+            <h3 class="text-center" id="exampleModalLabel">Edit</h3>
+          </div>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- <input type="text" value="personality" id="command" name="command" hidden> -->
+          <input type="text" id="id" name="id" hidden>
+
+          <div class="form-group mx-2">
+            <label for="exampleFormControlTextarea1">
+              <b style="font-family: sans-serif">Question</b>
+            </label>
+            <textarea class="form-control" id="Question" name="Question" rows="3" required></textarea>
+          </div>
+          <div class="form-group mx-2">
+            <label for="exampleFormControlSelect1"><b style="font-family: sans-serif">Openness to experience</b></label>
+            <select class="form-control" id="Openness" name="Openness" required>
+              <option value="">--Select--</option>
+              <option value="Strongly disagree ">Strongly disagree</option>
+              <option value="Disagree">Disagree</option>
+              <option value="Neither disagree nor agreee">
+                Neither disagree nor agreee
+              </option>
+              <option value="Agree">Agree</option>
+              <option value="Strongly agree">Strongly agree</option>
+            </select>
+          </div>
+
+          <div class="form-group mx-2">
+            <label for="exampleFormControlSelect1"><b style="font-family: sans-serif">Conscientiousness</b></label>
+            <select class="form-control" id="Conscientiousness" name="Conscientiousness" required>
+              <option value="">--Select--</option>
+              <option value="Strongly disagree ">Strongly disagree</option>
+              <option value="Disagree">Disagree</option>
+              <option value="Neither disagree nor agreee">
+                Neither disagree nor agreee
+              </option>
+              <option value="Agree">Agree</option>
+              <option value="Strongly agree">Strongly agree</option>
+            </select>
+          </div>
+          <div class="form-group mx-2">
+            <label for="exampleFormControlSelect1"><b style="font-family: sans-serif">Extraversion</b></label>
+            <select class="form-control" id="Extraversion" name="Extraversion" required>
+              <option value="">--Select--</option>
+              <option value="Strongly disagree ">Strongly disagree</option>
+              <option value="Disagree">Disagree</option>
+              <option value="Neither disagree nor agreee">
+                Neither disagree nor agreee
+              </option>
+              <option value="Agree">Agree</option>
+              <option value="Strongly agree">Strongly agree</option>
+            </select>
+          </div>
+          <div class="form-group mx-2">
+            <label for="exampleFormControlSelect1"><b style="font-family: sans-serif">Agreebleness</b></label>
+            <select class="form-control" id="Agreebleness" name="Agreebleness" required>
+              <option value="">--Select--</option>
+              <option value="Strongly disagree ">Strongly disagree</option>
+              <option value="Disagree">Disagree</option>
+              <option value="Neither disagree nor agreee">
+                Neither disagree nor agreee
+              </option>
+              <option value="Agree">Agree</option>
+              <option value="Strongly agree">Strongly agree</option>
+            </select>
+          </div>
+          <div class="form-group mx-2">
+            <label for="exampleFormControlSelect1"><b style="font-family: sans-serif">Neuroticism</b></label>
+            <select class="form-control" id="Neuroticism" name="Neuroticism" required>
+              <option value="">--Select--</option>
+              <option value="Strongly disagree ">Strongly disagree</option>
+              <option value="Disagree">Disagree</option>
+              <option value="Neither disagree nor agreee">
+                Neither disagree nor agreee
+              </option>
+              <option value="Agree">Agree</option>
+              <option value="Strongly agree">Strongly agree</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button class="btn text-white" style="background-color: #4608f2; width: auto" name="submit" type="submit">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+{% sweetify %}
+
+
+
+<script>
+  function update(ID) {
+    $.ajax({
+      type: "GET",
+      url: "/editVIEW/",
+
+      data: { id: ID, command: "personality" },
+      success: function (result) {
+        // $("#Designation").text(result[0].designation);
+        // $("#salary").text(result[0].salary);
+        // $("#place").text(result[0].place);
+        $("#Question").val(result[0].question);
+        $("#Openness").val(result[0].openness_to_experience);
+        $("#Conscientiousness").val(result[0].conscientiousness);
+        $("#Extraversion").val(result[0].extraversion);
+        $("#Agreebleness").val(result[0].agreeableness);
+        $("#Neuroticism").val(result[0].neuroticism);
+        $("#id").val(result[0].id);
+
+        $("#exampleModal").modal("show");
+        // $('#data').show();
+        console.log(result[0]);
+        return;
+      },
+    });
+  }
+</script>
+<script>
+  function Delete(ID) {
+
+
+    Swal.fire({
+      title: 'Are you sure?',
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      denyButtonText: 'No',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+      type: "GET",
+      url: "/deletepersonalityVIEW/",
+
+      data: { id: ID},
+      success: function (result) {
+        window.location.href = "/displayPersonality/";
+      },
+    });
+
+
+
+      } else if (result.isDenied) {
+
+
+      }
+    })
+  }
+</script>
+
+
 
 {% endblock %}

@@ -5,6 +5,9 @@
 <div class="form-group container mt-5">
     {% csrf_token %}
     <div class="card bg-ligt">
+        <h3 class="card-title text-center mt-4" style="font-family: sans-serif">
+            Aptitude Question
+          </h3>
         <div class="card-body">
 
             <table class="table table-hover table-borderless my-3">
@@ -34,10 +37,12 @@
                         <td class="">{{forloop.counter}}</td>
                         <td class="">{{aptitude.questions}}</td>
                         <td>
-                            <button type="button"id="Update" onclick="update('{{aptitude.id}}');"
-                                value="{{aptitude.id}}" class="btn btn-warning ">Edit
+                            <button type="button" id="Update" onclick="update('{{aptitude.id}}');"
+                                value="{{aptitude.id}}" class="btn btn-warning "
+                               >Edit
+                                  
                             </button>
-                                <button type="button" id="button" onclick="Delete('{{aptitude.id}}');"
+                            <button type="button" id="button" onclick="Delete('{{aptitude.id}}');"
                                 value="{{aptitude.id}}" class="btn btn-danger">Delete</button>
 
                         </td>
@@ -55,5 +60,154 @@
         </div>
     </div>
 </div>
+
+<!-- ---modal--- -->
+
+<form class="" method="post" action="/updateaptitudeVIEW/">
+    {% csrf_token %}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <div class="container">
+                        <h3 class="text-center" id="exampleModalLabel">Edit</h3>
+                    </div>
+
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="id" name="id" hidden>
+
+                    <div class="form-group mx-2">
+                        <label for="exampleFormControlSelect1"><b style="font-family:sans-serif;">Type</b></label>
+                        <select class="form-control" id="type" name="type">
+                            <option value="">--Select--</option>
+                            <option value="English">English </option>
+                            <option value="Maths">Maths</option>
+                            <option value="Programming">Programming</option>
+                        </select>
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleFormControlTextarea1">
+                            <b style="font-family:sans-serif;">Question</b> </label>
+                        <textarea class="form-control" id="Question" name="Question" rows="3"></textarea>
+
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputOption1"><b style="font-family:sans-serif;">Option 1</b></label>
+                        <input type="text" class="form-control" id="option1" name="option1" placeholder="Option 1"
+                            required>
+
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputOption2"><b style="font-family:sans-serif;">Option 2</b></label>
+                        <input type="text" class="form-control" id="option2" name="option2" placeholder="Option 2"
+                            required>
+
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputOption3"><b style="font-family:sans-serif;">Option 3</b></label>
+                        <input type="text" class="form-control" id="option3" name="option3" placeholder="Option 3"
+                            required>
+
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputOption4"><b style="font-family:sans-serif;">Option 4</b></label>
+                        <input type="text" class="form-control" id="option4" name="option4" placeholder="Option 4"
+                            required>
+
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputCorrectOption"><b> Answer</b></label>
+                        <input type="text" class="form-control" id="correctAns" name="correctAns"
+                            placeholder="Correct Answer" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn text-white " style="background-color:#4608f2; width: auto;" name="submit"
+                        type="submit">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+{% sweetify %}
+
+
+
+
+
+<script>
+    function update(ID) {
+      $.ajax({
+        type: "GET",
+        url: "/editVIEW/",
+  
+        data: { id: ID, command: "apptitude" },
+        success: function (result) {
+          // $("#Designation").text(result[0].designation);
+          // $("#salary").text(result[0].salary);
+          // $("#place").text(result[0].place);
+          $("#type").val(result[0].questionType);
+          $("#Question").val(result[0].questions);
+          $("#option1").val(result[0].option1);
+          $("#option2").val(result[0].option2);
+          $("#option3").val(result[0].option3);
+          $("#option4").val(result[0].option4);
+          $("#correctAns").val(result[0].answer);
+          $("#id").val(result[0].id);
+  
+          $("#exampleModal").modal("show");
+          // $('#data').show();
+          console.log(result[0]);
+          return;
+        },
+      });
+    }
+  </script>
+
+<script>
+    function Delete(ID) {
+  
+  
+      Swal.fire({
+        title: 'Are you sure?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: 'No',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+        type: "GET",
+        url: "/deleteaptitudeVIEW/",
+  
+        data: { id: ID},
+        success: function () {
+          window.location.href = "/displayAptitude/";
+        },
+      });
+  
+  
+  
+        } else if (result.isDenied) {
+  
+  
+        }
+      })
+    }
+  </script>
+
+
+
+
+
 
 {% endblock %}

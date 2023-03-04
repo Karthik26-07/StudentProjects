@@ -1,0 +1,185 @@
+{% extends 'admin/adminNavigation.html' %}
+{% block content %}
+{% load static %}
+
+<div class="form-group container mt-5">
+    {% csrf_token %}
+    <div class="card bg-ligt">
+        <h3 class="card-title text-center mt-4" style="font-family: sans-serif">
+            Job Details
+        </h3>
+        <div class="card-body">
+
+            <table class="table table-hover table-borderless my-3">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Job Id</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Place</th>
+
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if not jobdetails%}
+                    <tr>
+                        <td colspan="8" class="text-center text-danger">
+                            No Record Found
+                        </td>
+                    </tr>
+
+                    {%else%}
+                    {% for Job in jobdetails%}
+
+
+                    <tr>
+
+                        <td class="">{{forloop.counter}}</td>
+                        <td class="">{{Job.jobid}}</td>
+
+                        <td class="">{{Job.designation}}</td>
+                        <td class="">{{Job.salary}}</td>
+                        <td class="">{{Job.place}}</td>
+                        <td>
+                            <button type="button" id="Update" onclick="update('{{Job.id}}');"
+                                value="{{Job.id}}" class="btn btn-warning ">Edit
+                            </button>
+                            <button type="button" id="button" onclick="Delete('{{Job.id}}');"
+                                value="{{Job.id}}" class="btn btn-danger">Delete</button>
+
+                        </td>
+
+
+
+
+                    </tr>
+
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ---Modal--- -->
+
+<form class="" method="post" action="/updatejobdetailVIEW/">
+    {% csrf_token %}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <div class="container">
+                        <h3 class="text-center" id="exampleModalLabel">Edit</h3>
+                    </div>
+
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="id" name="id" hidden>
+
+                    <div class="form-group mx-2">
+                        <label for="exampleInputjobid">
+                            <b style="font-family:sans-serif;">Job ID</b> </label>
+                        <input type="text" class="form-control" id="jobid" name="jobid" placeholder="Job Id">
+
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputdesignation"><b style="font-family:sans-serif;">Designation</b></label>
+                        <input type="text" class="form-control" id="designation" name="designation"
+                            placeholder="Designation">
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputsalary"><b style="font-family:sans-serif;">Salary</b></label>
+                        <input type="text" class="form-control" id="salary" name="salary" placeholder="Salary">
+
+
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="exampleInputplace"><b style="font-family:sans-serif;">Place</b></label>
+                        <input type="text" class="form-control" id="place" name="place" placeholder="Place">
+
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn text-white " style="background-color:#4608f2; width: auto;" name="submit"
+                            type="submit">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+{% sweetify %}
+
+
+<script>
+    function update(ID) {
+      $.ajax({
+        type: "GET",
+        url: "/editVIEW/",
+  
+        data: { id: ID, command: "JobDetails" },
+        success: function (result) {
+         
+          $("#jobid").val(result[0].jobid);
+          $("#designation").val(result[0].designation);
+          $("#salary").val(result[0].salary);
+          $("#place").val(result[0].place);
+        
+          $("#id").val(result[0].id);
+  
+          $("#exampleModal").modal("show");
+          // $('#data').show();
+          console.log(result[0]);
+          return;
+        },
+      });
+    }
+  </script>
+
+<script>
+    function Delete(ID) {
+  
+  
+      Swal.fire({
+        title: 'Are you sure?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: 'No',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+        type: "GET",
+        url: "/deletejobdetailVIEW/",
+  
+        data: { id: ID},
+        success: function () {
+          window.location.href = "/displayJob/";
+        },
+      });
+  
+  
+  
+        } else if (result.isDenied) {
+  
+  
+        }
+      })
+    }
+  </script>
+{% endblock %}

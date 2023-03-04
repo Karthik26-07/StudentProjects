@@ -13,7 +13,7 @@ class User(models.Model):
     address = models.CharField(blank=False, max_length=50)
     user_name = models.CharField(blank=False, max_length=25, default=None)
     password = models.CharField(max_length=10, blank=False, default=None)
-
+    
 
 
 class Questions(models.Model):
@@ -58,5 +58,13 @@ class job_details(models.Model):
     place=models.CharField(max_length=250)
     jobid=models.CharField(max_length=250)
 
-
+class job_requirement(models.Model):
+    class Meta:
+        db_table:"job_requirement"
+    
+    
+    experience=models.CharField(max_length=250)
+    job_id=models.IntegerField()
+    qualification=models.CharField(max_length=250)
+    skills=models.CharField(max_length=250)
     

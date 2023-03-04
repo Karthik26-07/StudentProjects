@@ -21,14 +21,13 @@ bg-light">
                                 <b style="font-family:sans-serif;">Job ID</b> </label>
 
                         </div>
-                        
+
                         <div class="col-md-8">
-                        
-                            <input type="text" class="form-control" id="jobid" value="" name="jobid"
-                                placeholder="Job Id">
-                                
+
+                            <input type="text" class="form-control" id="jobid" name="jobid" placeholder="Job Id">
+
                         </div>
-                  
+
 
                     </div>
                 </div>
@@ -100,8 +99,12 @@ bg-light">
         var Designation = document.getElementById('designation').value;
         var Salary = document.getElementById('salary').value;
         var Place = document.getElementById('place').value;
-
-        if (Designation == "") {
+        var jobid = document.getElementById('jobid').value;
+        if (jobid == "") {
+            window.alert('Please provide JobId');
+            return false;
+        }
+        else if (Designation == "") {
             window.alert('Please provide Designation');
             return false;
         }
