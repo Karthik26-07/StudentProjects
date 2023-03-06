@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.cattledisease.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_doctor"
+        android:name="com.example.cattledisease.ui.Doctor.Doctor"
+        android:label="Doctor"
+        tools:layout="@layout/doctor" />
+    <fragment
+        android:id="@+id/nav_symptoms"
+        android:name="com.example.cattledisease.ui.Symptoms.SymptomsFragements"
+        android:label="Symptoms"
+        tools:layout="@layout/fragment_symptoms" />
+    <fragment
+        android:id="@+id/nav_uploadimage"
+        android:name="com.example.cattledisease.ui.UploadImage.UploadImageFragment"
+        android:label="Upload Image"
+        tools:layout="@layout/fragment_uploadimage" />
+
+    <activity
+        android:id="@+id/near_location"
+        android:name="com.example.cattledisease.ui.NearByLocation.NearByLocation"
+        android:label="Near By Location"
+        tools:layout="@layout/activity_near_by_location" />
+    <fragment
+        android:id="@+id/breeds"
+        android:name="com.example.cattledisease.ui.Breeds.BreedsFragment"
+        android:label="Breeds"
+        tools:layout="@layout/fragement_breeds" />
+</navigation>

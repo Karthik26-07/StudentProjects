@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_uploadimage"
+            android:icon="@drawable/iupload"
+            android:title="Upload Image" />
+        <item
+            android:id="@+id/disease"
+            android:icon="@drawable/disease"
+            android:title="Disease" />
+        <item
+        android:id="@+id/near_location"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="Near by location" />
+        <item
+            android:id="@+id/nav_doctor"
+            android:icon="@drawable/doctor"
+            android:title="Doctor" />
+        <item
+            android:id="@+id/breeds"
+            android:icon="@drawable/cows"
+            android:title="Breeds" />
+        <item
+            android:id="@+id/nav_symptoms"
+            android:icon="@drawable/symptoms"
+            android:title="Symptoms" />
+    </group>
+</menu>

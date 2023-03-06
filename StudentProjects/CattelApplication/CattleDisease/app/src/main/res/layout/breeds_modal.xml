@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="3dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#cbd1cc"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        android:id="@+id/Modal">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imvCircular"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
+                app:shapeAppearanceOverlay="@style/Circular"
+                app:strokeColor="#b3fcb1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/breedName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="cattele breed name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#050d07"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginTop="25dp"-->
+<!--                android:layout_marginLeft="20sp"-->
+<!--                app:cornerRadius="40dp"-->
+<!--                android:text="More"-->
+<!--                android:textAllCaps="false"/>-->
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/breedCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="45dp"
+            android:text="Cost"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:textColor="#050d07"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
